@@ -13,3 +13,10 @@ inputs:
   python_version:
     description: version of python to use
     required: false
+runs:
+  using: "composite"
+  steps:
+    - uses: ./.github/workflows/coveralls.yaml
+branding:
+  icon: 'check-circle'
+  color: 'green'
