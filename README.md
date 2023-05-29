@@ -16,10 +16,10 @@ Example:
 <br/>
 
 ## Inputs
-  - **src:** source directory used for code coverage (defaults to ".")
+  - **src:** source directory used for code coverage (defaults to "`.`")
   - **options:** optional flags/parameters used in pytest command
-  - **pip_install_command:** pip install command (defaults to "pip install coveralls pytest pytest-cov")
-  - **py-version:** version of python to use (defaults to "3.x")
+  - **pip_install_command:** pip install command (defaults to "`pip install coveralls pytest pytest-cov`")
+  - **py-version:** version of python to use (defaults to "`3.x`")
 
 
 <br/>
@@ -27,7 +27,7 @@ Example:
 ## Requirements
  - coveralls account
  - github repo setup on coveralls
- - COVERALLS_REPO_TOKEN secret available in your Github actions secrets and variables
+ - `COVERALLS_REPO_TOKEN` secret available in your Github actions secrets and variables
 
     See Coveralls for more details: https://coveralls.io/
 
