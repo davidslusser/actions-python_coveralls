@@ -1,0 +1,44 @@
+on:
+  workflow_call:
+    inputs:
+      src:
+        required: false
+        type: string
+        default: "."
+      options:
+        required: false
+        type: string
+        default: ""
+      pip_install_command:
+        required: false
+        type: string
+        default: "pip install coveralls pytest pytest-cov"
+      python_version:
+        required: false
+        type: string
+        default: "3.x"
+
+jobs:
+  coveralls:
+    name: "Run tests with coverage and publish to Coveralls"
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: "Set up python ${{ inputs.py-version }}"
+      uses: actions/checkout@v3
+      with:
+        python-version: ${{ inputs.py-version }}
+
+    - name: "Install dependencies"
+      run: |
+        python -m pip install --upgrade pip
+        ${{ inputs.pip_install_command }}
+
+    - name: "Run tests"
+      run: "coverage run --source=${{ inputs.src }} -m pytest ${{ inputs.options }}"
+
+    - name: "Push to Coveralls"
+      run: "coveralls"
+      env:
+        GITHUB_TOKEN: ${{ github.token }}
+        COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
