@@ -1,5 +1,8 @@
 name: actions_python_coveralls
 description: A Github action for running pytest with coverage and pushing results to coveralls
+branding:
+  icon: 'check-circle'
+  color: 'green'
 inputs:
   src:
     description: source directory used for code coverage
@@ -16,7 +19,8 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - uses: ./.github/actions/coveralls
-branding:
-  icon: 'check-circle'
-  color: 'green'
+    - name: Local Action Call
+      run: |
+        echo "Hello World"
+      shell: bash
+
