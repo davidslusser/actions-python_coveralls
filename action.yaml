@@ -16,7 +16,6 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - uses: ./.github/workflows/coveralls.yaml
-branding:
+    - uses: ./.github/workflows
   icon: 'check-circle'
   color: 'green'
