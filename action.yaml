@@ -14,8 +14,9 @@ inputs:
     description: version of python to use
     required: false
 runs:
-  using: 'docker'
-  image: 'Dockerfile'
+  using: "composite"
+  steps:
+    - uses: ./.github/actions/coveralls
 branding:
   icon: 'check-circle'
   color: 'green'
