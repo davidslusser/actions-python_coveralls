@@ -12,7 +12,7 @@ on:
       pip_install_command:
         required: false
         type: string
-        default: "pip install coveralls"
+        default: "pip install coveralls coverage pytest pytest-cov"
       python_version:
         required: false
         type: string
