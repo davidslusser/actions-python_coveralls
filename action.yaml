@@ -1,3 +1,6 @@
+---
+name: actions_python_coveralls
+
 on:
   workflow_call:
     inputs:
