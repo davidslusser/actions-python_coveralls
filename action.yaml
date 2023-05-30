@@ -17,11 +17,6 @@ inputs:
     required: true
     type: string
     default: "pip install coveralls pytest pytest-cov"
-  python_version:
-    description: "version of python to run action with"
-    required: true
-    type: string
-    default: "3.x"
   coveralls_repo_token:
     description: "coveralls repo token"
     required: true
@@ -29,10 +24,6 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - name: "Set up python ${{ inputs.py-version }}"
-      uses: actions/checkout@v3
-      with:
-        python-version: ${{ inputs.py-version }}
     - name: "install python dependencies"
       run: |
         python -m pip install --upgrade pip
