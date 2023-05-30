@@ -29,10 +29,9 @@ jobs:
 
 ## Inputs
   - **src:** source directory used for code coverage (defaults to "`.`")
-  - **options:** optional flags/parameters used in pytest command
+  - **options:** optional flags/parameters used in pytest command (defaults to --cov)
   - **pip_install_command:** pip install command (defaults to "`pip install coveralls pytest pytest-cov`")
-  - **python_version:** version of python to use (defaults to "`3.x`")
-
+ 
 
 <br/>
 
