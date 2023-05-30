@@ -3,10 +3,6 @@ description: A Github action for running pytest with coverage and pushing result
 branding:
   icon: 'check-circle'
   color: 'green'
-outputs:
-  random-number:
-    description: "Random number"
-    value: ${{ steps.random-number-generator.outputs.random-id }}
 runs:
   using: "composite"
   steps:
