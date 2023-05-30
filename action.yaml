@@ -26,10 +26,6 @@ inputs:
     description: "coveralls repo token"
     required: true
     type: string
-  python_version:
-    required: false
-    type: string
-    default: "3.x"
 runs:
   using: "composite"
   steps:
