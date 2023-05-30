@@ -26,6 +26,10 @@ inputs:
     description: "coveralls repo token"
     required: true
     type: string
+  python_version:
+    required: false
+    type: string
+    default: "3.x"
 runs:
   using: "composite"
   steps:
@@ -33,7 +37,7 @@ runs:
     - name: "Set up python ${{ inputs.py-version }}"
       uses: actions/setup-python@v4
       with:
-        python-version: ${{ inputs.py-version }}
+        python-version: ${{ inputs.python_version }}
     
     - name: "show python version"
       run: python --version
