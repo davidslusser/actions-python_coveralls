@@ -3,24 +3,11 @@ description: A Github action for running pytest with coverage and pushing result
 branding:
   icon: 'check-circle'
   color: 'green'
-inputs:
-  src:
-    description: source directory used for code coverage
-    required: false
-  options:
-    description: optional flags/parameters used in pytest command
-    required: false
-  pip_install_command:
-    description: command used to install dependancies
-    required: false
-  python_version:
-    description: version of python to use
-    required: false
+outputs:
+  random-number:
+    description: "Random number"
+    value: ${{ steps.random-number-generator.outputs.random-id }}
 runs:
   using: "composite"
   steps:
-    - name: Local Action Call
-      run: |
-        echo "Hello World"
-      shell: bash
-
+    - uses: davidslusser/actions/.github/workflows/covralls.yaml@main
