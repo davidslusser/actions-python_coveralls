@@ -10,17 +10,28 @@ In your .github/workflows directory, create a yaml file (such as main.yaml). Add
 Example:
 
 ```
+on: [push]
 
+jobs:
+  coveralls:
+    runs-on: ubuntu-latest
+    name: "coveralls"
+    steps:
+      - uses: davidslusser/actions_python_coveralls@test
+        with:
+          src: "src"
+          options: "--cov=src"
+          pip_install_command: "pip install -e .[dev]"
+          coveralls_repo_token: ${{ secrets.COVERALLS_REPO_TOKEN }}
 ```
 
 <br/>
 
 ## Inputs
   - **src:** source directory used for code coverage (defaults to "`.`")
-  - **options:** optional flags/parameters used in pytest command
+  - **options:** optional flags/parameters used in pytest command (defaults to "`--cov`")
   - **pip_install_command:** pip install command (defaults to "`pip install coveralls pytest pytest-cov`")
-  - **py-version:** version of python to use (defaults to "`3.x`")
-
+   - **python_version:** version of python to run workflow with (defaults to "`3.x`")
 
 <br/>
 
