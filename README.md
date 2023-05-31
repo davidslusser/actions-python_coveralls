@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     name: "coveralls"
     steps:
-      - uses: davidslusser/actions_python_coveralls@test
+      - uses: davidslusser/actions_python_coveralls@v1.0.0
         with:
           coveralls_repo_token: ${{ secrets.COVERALLS_REPO_TOKEN }}
 ```
@@ -31,7 +31,7 @@ jobs:
     runs-on: ubuntu-latest
     name: "coveralls"
     steps:
-      - uses: davidslusser/actions_python_coveralls@test
+      - uses: davidslusser/actions_python_coveralls@v1.0.0
         with:
           src: "src"
           options: "--cov=src"
